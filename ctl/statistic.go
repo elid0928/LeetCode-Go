@@ -7,8 +7,11 @@ import (
 	"github.com/halfrost/LeetCode-Go/ctl/util"
 )
 
+// statisticalData 统计数据
 func statisticalData(problemsMap map[int]m.StatStatusPairs, solutionIds []int) (easyTotal, mediumTotal, hardTotal, optimizingEasy, optimizingMedium, optimizingHard int32, optimizingIds []int) {
-	easyTotal, mediumTotal, hardTotal, optimizingEasy, optimizingMedium, optimizingHard, optimizingIds = 0, 0, 0, 0, 0, 0, []int{}
+	easyTotal, mediumTotal, hardTotal = 0, 0, 0
+	optimizingEasy, optimizingMedium, optimizingHard = 0, 0, 0
+	optimizingIds = []int{}
 	for _, v := range problemsMap {
 		switch m.DifficultyMap[v.Difficulty.Level] {
 		case "Easy":
